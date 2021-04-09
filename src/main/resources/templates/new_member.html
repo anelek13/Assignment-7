@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/header :: common-header"></head>
+
+<body>
+
+<div class="container">
+    <h1>Library Management System</h1>
+    <hr>
+    <h2>Save member</h2>
+
+    <form action="#" th:action="@{/members/saveMember}" th:object="${member}" method="post">
+        <input type="text" th:field = "*{firstName}" placeholder="Member firstname*" class="control mb-4 col-4">
+        <input type="text" th:field = "*{lastName}" placeholder="Member lastname*" class="control mb-4 col-4">
+        <input type="text" th:field = "*{email}" placeholder="Member email*" class="control mb-4 col-4">
+        <button type="submit" class="btn btn-info col-2"> Save member</button>
+    </form>
+</div>
+
+<div th:replace="common/header :: body-bottom-scripts"></div>
+
+</body>
+</html>
